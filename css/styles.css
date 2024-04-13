@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,700&family=Poppins:ital@0;1&family=Roboto&display=swap');
+
+body{
+    background-color: #141414;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    color: white !important;
+}
+
+.maquette{
+    position: absolute;
+    z-index: 9999;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: none;
+}
+
+.video{
+    /*biar videonya sesuai layar atau responsive*/
+    width: 100%;
+    height: 100vh;
+    /*cover – Konten yang diganti berukuran untuk mempertahankan 
+    rasio aspeknya sambil mengisi seluruh kotak konten elemen. 
+    Objek akan dipotong agar sesuai*/
+    /*nih penjelasannya https://tympanus.net/codrops/css_reference/object-fit/ */
+    object-fit: cover;
+}
+
+.site__title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 54px;
+    text-shadow: 3px 3px 0px #ffced5;
+    user-select: none;
+}
+.menu{
+    font-family: 'Montserrat', sans-serif;
+    text-align: right;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.menu__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__link:link {
+    text-decoration: none;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+}
+
+.menu__item{
+    margin-bottom: 20px;
+}
+
+.logo{
+    width: 100px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    /*atau kyknya bisa left: calc(50% - 50px)*/
+}
+
+main{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.description{
+    text-align: center;
+}
+
+.section{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.grid{
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.grid__article{
+    /*ni bawah apaan dah buset ntar cari*/
+    /*jadi ini tuh kyk persenan tp pake operasi; ngerti ga si*/
+    width: calc(50% - 10px);
+}
+
+.grid__link{
+    text-decoration: none;
+}
+.grid__img{
+    width: 100%;
+}
+
+.grid__title{
+    text-align: left;
+    color: #f9c5b8;
+}
+
+.footer{
+    padding-top: 50px;
+    padding-bottom: 15px;
+    border-top: 1px solid white;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.footer__list{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer__link{
+    text-decoration: none;
+    margin: 10px;
+}
+
+@media print{
+    body{
+        background-color: white;
+    }
+
+    .site__title{
+        font-size: 500px;
+    }
+}
+
+/*ini tuh buat breakpoint. jadi kl uk di atas 968px, background dia berubah jd merah*/
+@media screen and (min-width: 900px){
+    body{
+        background-color: lightpink;
+    }
+    .grid{
+        gap: 20px;
+    }
+    /*20 px nih jarak antara gambar*/
+    /*(taille - ((nombre gap * taille gap) / nb gambarnya))s*/
+    .grid__article{
+        width: calc(25% - ((3 * 20px) / 4));
+    }
+
+
+}
